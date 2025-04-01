@@ -36,16 +36,18 @@ object Vector2D:
             case Vector2D(x1, y1) => Vector2DImpl(x+x1, y+y1)
         
         // Vector subtraction: (x1, y1) - (x2, y2) = (x1-x2, y1-y2)
-        def -(other: Vector2D): Vector2D = ???
+        def -(other: Vector2D): Vector2D = other match
+            case Vector2D(x1, y1) => Vector2DImpl(x-x1, y-y1)
         
         // Scalar multiplication: s * (x, y) = (s*x, s*y)
-        def *(scalar: Double): Vector2D = ???
+        def *(scalar: Double): Vector2D = Vector2DImpl(scalar * x, scalar * y)
         
         // Dot product: (x1, y1) · (x2, y2) = x1*x2 + y1*y2
-        def dot(other: Vector2D): Double = ???
+        def dot(other: Vector2D): Double = other match
+            case Vector2D(x1, y1) => x*x1 + y*y1
         
         // Magnitude (length): ||(x, y)|| = sqrt(x*x + y*y)
-        def magnitude: Double = ???
+        def magnitude: Double = sqrt(x*x + y*y)
         
         override def toString: String = s"($x, $y)"
     
