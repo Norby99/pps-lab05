@@ -27,8 +27,7 @@ object Vector2D:
     // Factory method to create Vector2D instances
     def apply(x: Double, y: Double): Vector2D = Vector2DImpl(x, y)
     
-    def unapply(v: Vector2D): (Double, Double) =
-        (v.x, v.y)
+    def unapply(v: Vector2D): (Double, Double) = (v.x, v.y)
     
     private class Vector2DImpl(override val x: Double, override val y: Double) extends Vector2D:
         // Vector addition: (x1, y1) + (x2, y2) = (x1+x2, y1+y2)
